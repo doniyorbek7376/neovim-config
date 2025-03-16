@@ -29,5 +29,7 @@ return {
 			-- Don't use italic on current buffer
 			highlights = { buffer_selected = { bold = true } },
 		})
+		vim.keymap.set("n", "<TAB>", ":BufferLineCycleNext<CR>")
+		vim.keymap.set("n", "<S-TAB>", ":BufferLineCycleNext<CR>")
 	end,
 }
