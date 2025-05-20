@@ -9,6 +9,7 @@ local servers = {
 	"buf_ls",
 	"sqlls",
 	"terraformls",
+    "hls",
 }
 
 return {
@@ -32,30 +33,18 @@ return {
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
-			local utils = require("lsp.utils")
-			local common_on_attach = utils.common_on_attach
 			for _, lsp in ipairs(servers) do
 				lspconfig[lsp].setup({
-					on_attach = common_on_attach,
 					capabilities = capabilities,
 				})
 			end
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-			})
 			lspconfig.basedpyright.setup({
 				capabilities = capabilities,
 				settings = {
 					basedpyright = {
-						typeCheckingMode = "strict",
+						typeCheckingMode = "standard",
 					},
 				},
-			})
-			lspconfig.gopls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.ts_ls.setup({
-				capabilities = capabilities,
 			})
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
