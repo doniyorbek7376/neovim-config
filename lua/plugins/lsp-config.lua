@@ -10,6 +10,7 @@ local servers = {
 	"sqlls",
 	"terraformls",
     "hls",
+    "clangd",
 }
 
 return {
