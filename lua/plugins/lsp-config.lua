@@ -9,7 +9,6 @@ local servers = {
     "buf_ls",
     "sqlls",
     "terraformls",
-    "hls",
     "clangd",
 }
 
