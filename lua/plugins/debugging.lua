@@ -143,6 +143,24 @@ return {
 
         -- Configs Python
 
+        dap.configurations.python = {
+            {
+                type = "python",
+                name = "Debug file",
+                request = "launch",
+                program = "${file}",
+                mode = "debug",
+            },
+            {
+                type = "python",
+                request = "launch",
+                name = "Launch FastAPI (uvicorn)",
+                module = "uvicorn",
+                args = { "app.main:app", "--host", "127.0.0.1", "--port", "8000", "--reload" },
+                cwd = vim.fn.getcwd(),
+            },
+        }
+
         -- 🔴 Custom breakpoint icons
         vim.fn.sign_define("DapBreakpoint", {
             text = "🔴",
