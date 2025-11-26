@@ -35,12 +35,12 @@ return {
     },
     {
       "<leader>tn",
-      "<cmd>Trouble diagnostics next {jump=true}<cr>",
+      "<cmd>Trouble diagnostics next jump=true<cr>",
       desc = "Go to next diagnostics (Trouble)",
     },
     {
       "<leader>tp",
-      "<cmd>Trouble diagnostics prev {jump=true}<cr>",
+      "<cmd>Trouble diagnostics prev jump=true<cr>",
       desc = "Go to previous diagnostics (Trouble)",
     },
   },
