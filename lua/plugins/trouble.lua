@@ -33,5 +33,15 @@ return {
       "<cmd>Trouble qflist toggle<cr>",
       desc = "Quickfix List (Trouble)",
     },
+    {
+      "<leader>tn",
+      "<cmd>Trouble diagnostics next<cr>",
+      desc = "Quickfix List (Trouble)",
+    },
+    {
+      "<leader>tp",
+      "<cmd>Trouble diagnostics prev<cr>",
+      desc = "Quickfix List (Trouble)",
+    },
   },
 }
