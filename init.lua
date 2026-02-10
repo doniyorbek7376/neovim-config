@@ -35,3 +35,7 @@ if hardmode then
 end
 
 vim.notify = require("notify")
+require("omarchy.theme").apply()
+
+require("config.autocmds")
+
