@@ -37,6 +37,7 @@ return {
                     vim.lsp.config(lsp, {
                         capabilities = capabilities,
                     })
+                    vim.lsp.enable(lsp)
 				end
 			end
 
