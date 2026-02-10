@@ -32,21 +32,20 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			local lspconfig = require("lspconfig")
 			for _, lsp in ipairs(servers) do
 				if lsp ~= "clangd" then
-					lspconfig[lsp].setup({
-						capabilities = capabilities,
-					})
+                    vim.lsp.config(lsp, {
+                        capabilities = capabilities,
+                    })
 				end
 			end
 
-			lspconfig.clangd.setup({
+			vim.lsp.config("clangd", {
 				capabilities = capabilities,
 				filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "h", "hpp" },
 			})
 
-			lspconfig.basedpyright.setup({
+			vim.lsp.config("basedpyright", {
 				capabilities = capabilities,
 				settings = {
 					basedpyright = {
@@ -59,6 +58,7 @@ return {
 					},
 				},
 			})
+
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
